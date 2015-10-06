@@ -8,13 +8,14 @@
 	_this: ARRAY
 	_this select 0: ARRAY - units to load inventory for
 	_this select 1: STRING - what type of mission the loadout should be for
+	_this select 2: SCALAR - inventory mode
 
 	Returns:
 	BOOLEAN - true if nothing failed
 */
 
+private ["_ok","_params","_units","_mode","_settings","_useLaunchers","_aiGear","_uniforms","_headGear","_vests","_backpacks","_launchers","_rifles","_pistols","_policeMode"];
 _ok = false;
-private ["_params","_units","_mode","_settings","_useLaunchers","_aiGear","_uniforms","_headGear","_vests","_backpacks","_launchers","_rifles","_pistols"];
 _params = _this;
 if (typeName _this isEqualTo "ARRAY") then
 {
@@ -24,7 +25,7 @@ if (typeName _this isEqualTo "ARRAY") then
 		_mode = [_this, 1, "", [""]] call BIS_fnc_param;
 		if not(_mode isEqualTo "") then
 		{
-			_policeMode = "aiPoliceMode" call VEMFr_fnc_getSetting;
+			_policeMode = [_this, 2, 0,[0]] call BIS_fnc_param;
 			if (_policeMode isEqualTo -1) then
 			{
 				// Define settings
