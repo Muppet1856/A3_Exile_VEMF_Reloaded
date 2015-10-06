@@ -1,6 +1,10 @@
 ## VEMF Changelog
 
-#### `1.0727.3`
+#### `v1.0727.9`
+**[ADDED]** Option to disable/enable mission announcements <br />
+<br />
+
+#### `v1.0727.3`
 **[CHANGED]** Exile_VEMF is now called Exile_VEMF_Reloaded because the original creator of VEMF is proceeding on VEMF <br />
 **[ADDED]** S.W.A.T. AI <br />
 **[ADDED]** Option to send kill messages only to the killer (@KillingRe) <br />
