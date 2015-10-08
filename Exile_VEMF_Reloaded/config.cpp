@@ -64,7 +64,7 @@ class CfgVemfReloaded
 
 	class DynamicLocationInvasion // DynamicLocationInvasion settings
 	{
-		useAnnouncements = -1; // Use -1 to disable mission announcements
+		useAnnouncements = 1; // Use -1 to disable mission announcements
 		useMarker = 1; // Use -1 to disable mission markers
 		maxInvasions = 5; // Max amount of active uncompleted invasions allowed at the same time
 		cal50s = 3; // Max amount of .50 caliber machineguns at mission | Needs to be lower than total unit count per mission
