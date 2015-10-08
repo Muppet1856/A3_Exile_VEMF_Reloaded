@@ -1,5 +1,9 @@
 ## VEMF Changelog
 
+#### `v1.0727.11`
+**[FIXED]** Missions stop spawning after a certain amount of time <br />
+<br />
+
 #### `v1.0727.9`
 **[ADDED]** Option to disable/enable mission announcements <br />
 <br />

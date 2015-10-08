@@ -94,8 +94,11 @@ if (VEMF_invasCount < _maxInvasions) then
 				// Wait for Mission Completion
 				_done = [_loc select 1, _spawned select 0, _playerCheck] call VEMFr_fnc_waitForMissionDone;
 				_usedLocs = uiNamespace getVariable "VEMFrUsedLocs";
-				_index = _usedLocs find _loc;
-				_usedLocs deleteAt _index;
+				_index = _usedLocs find [_loc select 0, _loc select 1];
+				if (_index > -1) then
+				{
+					_usedLocs deleteAt _index;
+				};
 				if _done then
 				{
 					// Broadcast

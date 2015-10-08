@@ -64,7 +64,7 @@ class CfgVemfReloaded
 
 	class DynamicLocationInvasion // DynamicLocationInvasion settings
 	{
-		useAnnouncements = 1; // Use -1 to disable mission announcements
+		useAnnouncements = -1; // Use -1 to disable mission announcements
 		useMarker = 1; // Use -1 to disable mission markers
 		maxInvasions = 5; // Max amount of active uncompleted invasions allowed at the same time
 		cal50s = 3; // Max amount of .50 caliber machineguns at mission | Needs to be lower than total unit count per mission
@@ -315,7 +315,7 @@ class CfgPatches
 		requiredAddons[] = {"exile_server"};
 		fileName = "Exile_VEMF_Reloaded.pbo";
 		requiredVersion = 1.50;
-		version = 1.0727.9; /// Do NOT change
+		version = 1.0727.11; // Do NOT change
 		author[]= {"IT07"}; // Original author: Vampire. Permission to continue/remake VEMF given to IT07
 	};
 };
