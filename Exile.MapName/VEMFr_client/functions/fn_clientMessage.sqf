@@ -64,6 +64,12 @@ if not(_txt isEqualTo "") then
 				};
 			};
 		};
+		_ctrlBg ctrlSetPosition [(ctrlPosition _ctrlBg) select 0, (ctrlPosition _ctrlBg) select 1, 0 * safezoneW, (ctrlPosition _ctrlbG) select 3];
+		_ctrlBg ctrlCommit 0.4;
+		uiSleep 0.5;
+		_ctrlTag ctrlSetPosition [(ctrlPosition _ctrlTag) select 0, (ctrlPosition _ctrlTag) select 1, 0 * safezoneW, (ctrlPosition _ctrlTag) select 3];
+		_ctrlTag ctrlCommit 0.25;
+		_ctrlTag ctrlSetText "";
 		(["RscDisplayVEMFrClient"] call BIS_fnc_rscLayer) cutFadeOut 1;
 	};
 	if isNil"_dsp" then
@@ -81,7 +87,15 @@ if not(_txt isEqualTo "") then
 				if not(isNull _dsp) then { waitUntil { uiSleep 2; isNull _dsp; (_qeue select 0) isEqualTo _txt } };
 				(["RscDisplayVEMFrClient"] call BIS_fnc_rscLayer) cutRsc["RscDisplayVEMFrClient", "PLAIN", 0, true];
 				_dsp = uiNamespace getVariable "RscDisplayVEMFrClient";
+				_ctrlTag = _dsp displayCtrl 1001;
+			    _ctrlTag ctrlSetPosition [(ctrlPosition _ctrlTag) select 0, (ctrlPosition _ctrlTag) select 1, 0.0625 * safezoneW, (ctrlPosition _ctrlTag) select 3];
+			    _ctrlTag ctrlCommit 0.25;
+			    uiSleep 0.5;
+			    _ctrlBg = _dsp displayCtrl 2200;
+			    _ctrlBg ctrlSetPosition [(ctrlPosition _ctrlBg) select 0, (ctrlPosition _ctrlBg) select 1, 0.4375 * safezoneW, (ctrlPosition _ctrlbG) select 3];
+			    _ctrlBg ctrlCommit 0.4;
 				_ctrl = _dsp displayCtrl 1000;
+				uiSleep 0.5;
 				[_ctrl, _txt] call _show;
 			};
 		};
