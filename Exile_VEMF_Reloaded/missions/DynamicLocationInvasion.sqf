@@ -34,13 +34,13 @@ if (VEMF_invasCount < _maxInvasions) then
 		// Send message to all players
 		private ["_newMissionMsg","_aiPoliceMode"];
 		_aiPoliceMode = "aiPoliceMode" call VEMFr_fnc_getSetting;
+		_randomModes = ([["DynamicLocationInvasion"],["randomModes"]] call VEMFr_fnc_getSetting) select 0;
+		if (_randomModes isEqualTo 1) then
+		{
+			_aiPoliceMode = [0,1,2] call VEMFr_fnc_random;
+		};
 		if (_useAnnouncements isEqualTo 1) then
 		{
-			_randomModes = ([["DynamicLocationInvasion"],["randomModes"]] call VEMFr_fnc_getSetting) select 0;
-			if (_randomModes isEqualTo 1) then
-			{
-				_aiPoliceMode = floor random 3;
-			};
 			if (_aiPoliceMode < 1) then
 			{
 				_newMissionMsg = [format["Plundering groups have invaded %1 @ %2", _locName, mapGridPosition (_loc select 1)], ""] call VEMFr_fnc_broadCast;
@@ -56,7 +56,7 @@ if (VEMF_invasCount < _maxInvasions) then
 		};
 		if (_useMissionMarker isEqualTo 1) then
 		{ // Create/place the marker if enabled
-			_marker = createMarker [format["VEMF_DynaLocInva_ID%1", random 9000], (_loc select 1)];
+			_marker = createMarker [format["VEMFr_DynaLocInva_ID%1", random 9000], (_loc select 1)];
 			_marker setMarkerShape "ICON";
 			_marker setMarkerType "o_inf";
 			_marker setMarkerColor "ColorBlack";

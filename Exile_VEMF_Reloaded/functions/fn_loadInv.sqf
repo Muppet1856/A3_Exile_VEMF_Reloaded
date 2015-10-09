@@ -25,8 +25,8 @@ if (typeName _this isEqualTo "ARRAY") then
 		_mode = [_this, 1, "", [""]] call BIS_fnc_param;
 		if not(_mode isEqualTo "") then
 		{
-			_policeMode = [_this, 2, 0,[0]] call BIS_fnc_param;
-			if (_policeMode isEqualTo -1) then
+			_policeMode = [_this, 2, 0, [0]] call BIS_fnc_param;
+			if (_policeMode < 1) then
 			{
 				// Define settings
 				_aiGear = [["aiGear"],["aiUniforms","aiHeadGear","aiVests","aiBackpacks","aiLaunchers","aiRifles","aiPistols"]] call VEMFr_fnc_getSetting;

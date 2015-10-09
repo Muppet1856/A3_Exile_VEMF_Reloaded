@@ -315,7 +315,7 @@ class CfgPatches
 		requiredAddons[] = {"exile_server"};
 		fileName = "Exile_VEMF_Reloaded.pbo";
 		requiredVersion = 1.50;
-		version = 1.0727.11; // Do NOT change
+		version = "1.0727.13"; // Do NOT change
 		author[]= {"IT07"}; // Original author: Vampire. Permission to continue/remake VEMF given to IT07
 	};
 };

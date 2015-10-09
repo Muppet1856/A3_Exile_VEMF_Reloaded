@@ -17,7 +17,7 @@
 private // Make sure that the vars in this function do not interfere with vars in the calling script
 [
 	"_pos","_grpCount","_unitsPerGrp","_sldrClass","_groups","_settings","_hc","_skills","_newPos","_return","_waypoints","_wp","_cyc","_units",
-	"_accuracy","_aimShake","_aimSpeed","_stamina","_spotDist","_spotTime","_courage","_reloadSpd","_commanding","_general","_loadInv","_noHouses","_cal50sVehs"
+	"_accuracy","_aimShake","_aimSpeed","_stamina","_spotDist","_spotTime","_courage","_reloadSpd","_commanding","_general","_loadInv","_noHouses","_cal50sVehs","_mode"
 ];
 
 _spawned = [[],[]];
@@ -165,7 +165,7 @@ if (count _pos isEqualTo 3) then
 				_groups pushBack _grp; // Push it into the _groups array
 			};
 
-			_invLoaded = [_spawned select 0,"Invasion", _mode] call VEMFr_fnc_loadInv; // Load the AI's inventory
+			_invLoaded = [_spawned select 0, "Invasion", _mode] call VEMFr_fnc_loadInv; // Load the AI's inventory
 			if isNil"_invLoaded" then
 			{
 				["fn_spawnAI", 0, "failed to load AI's inventory..."] call VEMFr_fnc_log;
