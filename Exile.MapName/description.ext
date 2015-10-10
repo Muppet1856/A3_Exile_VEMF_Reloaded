@@ -1,6 +1,6 @@
 class cfgFunctions
 {
-	class Epoch_VEMF_Reloaded
+	class Exile_VEMF_Reloaded
 	{
 		tag = "VEMFr";
 		class clientFunctions
