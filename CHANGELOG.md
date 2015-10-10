@@ -1,5 +1,9 @@
 ## VEMF Changelog
 
+#### `v0727.15`
+**[FIX ATTEMPT]** Missions not spawning anymore under very specific conditions <br />
+<br />
+
 #### `v1.0727.13`
 **[FIXED]** fn_loadInv not working for the bad guys <br />
 **[FIXED]** random missions not working if mission announcements were disabled <br />

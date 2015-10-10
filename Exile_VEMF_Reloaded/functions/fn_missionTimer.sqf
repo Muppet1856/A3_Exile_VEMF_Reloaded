@@ -29,7 +29,7 @@ if (_minFPS > 0) then
                     _missionList = "missionList" call VEMFr_fnc_getSetting;
                     if (count _missionList > 0) then
                     {
-                        waitUntil { uiSleep 2; ([_minPlayers] call VEMFr_fnc_playerCount); diag_fps > _minFPS };
+                        waitUntil { uiSleep 5; ([_minPlayers] call VEMFr_fnc_playerCount); diag_fps > _minFPS };
                         ["Launcher", 1, format["Minimal player count of %1 reached! Starting timer...", _minPlayers]] call VEMFr_fnc_log;
 
                         VEMFr_missionCount = 0;
@@ -49,16 +49,14 @@ if (_minFPS > 0) then
                             {
                                 if _ignoreLimit then
                                 {
-                                    VEMFr_missionCount = VEMFr_missionCount +1;
                                     _missVar = _missionList call BIS_fnc_selectRandom;
                                     [] execVM format["Exile_VEMF_Reloaded\missions\%1.sqf", _missVar];
                                     _lastMission = time;
                                 };
                                 if not _ignoreLimit then
                                 {
-                                    if (VEMFr_missionCount < _maxGlobalMissions) then
+                                    if (VEMFr_missionCount <= _maxGlobalMissions) then
                                     {
-                                        VEMFr_missionCount = VEMFr_missionCount +1;
                                         _missVar = _missionList call BIS_fnc_selectRandom;
                                         [] execVM format["Exile_VEMF_Reloaded\missions\%1.sqf", _missVar];
                                         _lastMission = time;

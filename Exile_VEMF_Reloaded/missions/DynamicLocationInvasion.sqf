@@ -6,8 +6,8 @@ private ["_settings","_grpCount","_groupUnits","_playerCheck","_loc","_hasPlayer
 // Define _settings
 _settings = [["DynamicLocationInvasion"],["maxInvasions","groupCount","groupUnits","distanceCheck","distanceTooClose","distanceMaxPrefered","playerCheck","crateAltitude","useMarker","parachuteCrate","crateVisualMarker","crateMapMarker","crateSpawnSound","useAnnouncements"]] call VEMFr_fnc_getSetting;
 _maxInvasions = _settings select 0;
-if isNil"VEMF_invasCount" then { VEMF_invasCount = 0; };
-if (VEMF_invasCount < _maxInvasions) then
+if isNil"VEMFr_invasCount" then { VEMFr_invasCount = 0; };
+if (VEMFr_invasCount <= _maxInvasions) then
 {
 	_grpCount = _settings select 1;
 	_groupUnits = _settings select 2;
@@ -30,7 +30,8 @@ if (VEMF_invasCount < _maxInvasions) then
 		_locName = _loc select 0;
 		if (_locName isEqualTo "") then { _locName = "Area"; };
 		["DynamicLocationInvasion", 1, format["Invading %1...", _locName]] call VEMFr_fnc_log;
-		VEMF_invasCount = VEMF_invasCount + 1;
+		VEMFr_invasCount = VEMFr_invasCount + 1;
+		VEMFr_missionCount = VEMFr_missionCount + 1;
 		// Send message to all players
 		private ["_newMissionMsg","_aiPoliceMode"];
 		_aiPoliceMode = "aiPoliceMode" call VEMFr_fnc_getSetting;
@@ -204,7 +205,7 @@ if (VEMF_invasCount < _maxInvasions) then
 					{
 						deleteMarker _marker
 					};
-					VEMF_invasCount = VEMF_invasCount - 1;
+					VEMFr_invasCount = VEMFr_invasCount - 1;
 					VEMFr_missionCount = VEMFr_missionCount - 1;
 
 					// Put a marker on the crate if enabled
@@ -270,7 +271,7 @@ if (VEMF_invasCount < _maxInvasions) then
 				{
 					deleteMarker _marker
 				};
-				VEMF_invasCount = VEMF_invasCount - 1;
+				VEMFr_invasCount = VEMFr_invasCount - 1;
 				VEMFr_missionCount = VEMFr_missionCount - 1;
 			};
 		};
@@ -281,7 +282,7 @@ if (VEMF_invasCount < _maxInvasions) then
 			{
 				deleteMarker _marker
 			};
-			VEMF_invasCount = VEMF_invasCount - 1;
+			VEMFr_invasCount = VEMFr_invasCount - 1;
 			VEMFr_missionCount = VEMFr_missionCount - 1;
 		};
 	};
