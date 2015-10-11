@@ -20,7 +20,7 @@ class CfgVemfReloaded
 	validateLoot = 1; // Use -1 to disable. Checks if defined classes in loot and ai gear (except blacklist) are valid. Will output test result to RPT if ERROR logs enabled
 	minPlayers = 1; // Missions will not start until player count reaches this number OR when player count goes below this amount
 	maxGlobalMissions = 5; // Use -1 to disable limit | Max amount of missions that are allowed to run at the same time
- 	timeOutTime = 20; // In minutes. Use -1 to disable mission timeout; Minimal: 5
+ 	timeOutTime = 5; // In minutes. Use -1 to disable mission timeout; Minimal: 5
 	minNew = 2; // Minimum time before new mission can run
 	maxNew = 3; // Maximum time before new mission can run
 	missionList[] = {"DynamicLocationInvasion"}; // Speaks for itself, right?
@@ -315,8 +315,8 @@ class CfgPatches
 		requiredAddons[] = {"exile_server"};
 		fileName = "Exile_VEMF_Reloaded.pbo";
 		requiredVersion = 1.50;
-		version = "1.0727.13"; // Do NOT change
-		author[]= {"IT07"}; // Original author: Vampire. Permission to continue/remake VEMF given to IT07
+		version = 0727.15; // Do NOT change
+		author[]= {"IT07"}; // Original author: Vampire. Permission to continue/remake VEMF under VEMF_Reloaded given to IT07
 	};
 };
 
